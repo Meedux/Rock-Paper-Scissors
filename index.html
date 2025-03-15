@@ -1,26 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Rock, Paper, Scissors</title>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<main>
-			<div class="output">
-			<h3>Enemy Score: <span class="enemy-score"></span></h3>
-			<h3>Player Score: <span class="player-score"></span></h3>
-			<img alt="Enemy" class="enemy box" width="40" height="40">
-			<h3 class="announcer"></h3>
-			<img alt="Player" class="player box" width="40" height="40">
-		</div>
-		<div class="choices">
-			<img src="./img/rock.png"alt="box" class="choice box" width="40" height="40" rock>
-			<img src="./img/paper.png"alt="box" class="choice box" width="40" height="40" paper>
-			<img src="./img/scissor.png"alt="box" class="choice box" width="40" height="40" scissor>
-		</div>
-		</main>
-		<script type="text/javascript" src="script.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock, Paper, Scissors</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Rock, Paper, Scissors Game</h1>
+            <div class="sound-control">
+                <button id="toggle-sound" class="sound-on">🔊</button>
+            </div>
+        </header>
+        <main>
+            <button class="start">Start Game</button>
+            <div class="game-container hidden">
+                <div class="score-board">
+                    <div class="score enemy-side">
+                        <h3>Enemy</h3>
+                        <span class="enemy-score">0</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="score player-side">
+                        <h3>Player</h3>
+                        <span class="player-score">0</span>
+                    </div>
+                </div>
+                <div class="output">
+                    <img alt="Enemy" class="enemy box" width="100" height="100">
+                    <h3 class="announcer"></h3>
+                    <img alt="Player" class="player box" width="100" height="100">
+                </div>
+                <div class="choices">
+                    <div class="choice-container">
+                        <img src="./img/rock.png" alt="Rock" class="choice box" width="80" height="80" rock>
+                        <span>Rock</span>
+                    </div>
+                    <div class="choice-container">
+                        <img src="./img/paper.png" alt="Paper" class="choice box" width="80" height="80" paper>
+                        <span>Paper</span>
+                    </div>
+                    <div class="choice-container">
+                        <img src="./img/scissor.png" alt="Scissors" class="choice box" width="80" height="80" scissor>
+                        <span>Scissors</span>
+                    </div>
+                </div>
+                <button class="reset">Reset Game</button>
+            </div>
+        </main>
+        
+        <!-- Audio elements -->
+        <audio id="background-music" loop>
+            <source src="./audio/background.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="click-sound">
+            <source src="./audio/click.wav" type="audio/mpeg">
+        </audio>
+        <audio id="win-sound">
+            <source src="./audio/flawless_victory.ogg" type="audio/mpeg">
+        </audio>
+        <audio id="lose-sound">
+            <source src="./audio/game_over.ogg" type="audio/mpeg">
+        </audio>
+        <audio id="tie-sound">
+            <source src="./audio/it's_a_tie.ogg" type="audio/mpeg">
+        </audio>
+        
+        <script type="text/javascript" src="script.js"></script>
+    </body>
 </html>
